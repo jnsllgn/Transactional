@@ -19,23 +19,23 @@ public class RekeningService {
     }
 
     @Transactional
-    public void transfer(String norek1,String norek2,double amount) {
-        Rekening rekening1 = rekeningRepo.findByNorek(norek1);
-        if(rekening1 == null){
-            throw new RuntimeException("Norek tidak valid");
+    public void transfer(String noRekAsal,String noRekTujuan,double jumlahTransfer) {
+        Rekening rekeningAsal = rekeningRepo.findByNorek(noRekAsal);
+        if(rekeningAsal == null){
+            throw new RuntimeException("Norek pengirim tidak valid");
         }
-        if(rekening1.getSaldo()<amount){
+        if(rekeningAsal.getSaldo()<jumlahTransfer){
             throw new RuntimeException("Saldo tidak cukup");
         }
-        rekening1.setSaldo(rekening1.getSaldo()-amount);
-        rekeningRepo.save(rekening1);
+        rekeningAsal.setSaldo(rekeningAsal.getSaldo()-jumlahTransfer);
+        rekeningRepo.save(rekeningAsal);
 
-        Rekening rekening2= rekeningRepo.findByNorek(norek2);
-        if(rekening2 == null){
-            throw new RuntimeException("Norek2 tidak valid");
+        Rekening rekeningTujuan= rekeningRepo.findByNorek(noRekTujuan);
+        if(rekeningTujuan == null){
+            throw new RuntimeException("Norek penerima tidak valid");
         }
-        rekening2.setSaldo(rekening2.getSaldo()+amount);
-        rekeningRepo.save(rekening2);
+        rekeningTujuan.setSaldo(rekeningTujuan.getSaldo()+jumlahTransfer);
+        rekeningRepo.save(rekeningTujuan);
 
 
     }

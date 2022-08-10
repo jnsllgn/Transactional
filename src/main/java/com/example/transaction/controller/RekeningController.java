@@ -25,7 +25,7 @@ public class RekeningController {
 
     @PostMapping("/transfer")
     public void transfer(@RequestBody TransferRequest transfer){
-        service.transfer(transfer.getNorek1(), transfer.getNorek2(), transfer.getAmount());
+        service.transfer(transfer.getNoRekAsal(), transfer.getNoRekTujuan(), transfer.getJumlahTransfer());
     }
 
 }

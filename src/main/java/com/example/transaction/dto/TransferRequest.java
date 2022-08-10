@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class TransferRequest {
-    private String norek1;
-    private String norek2;
-    private double amount;
+    private String noRekAsal;
+    private String noRekTujuan;
+    private double jumlahTransfer;
 }
