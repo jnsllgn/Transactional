@@ -37,10 +37,9 @@ public class TransaksiTest {
         rekening.add(new Rekening("1188", "donni", 1000));
         rekening.add(new Rekening("1199", "donni", 1000));
 
-
         when(rekeningRepo.findAll()).thenReturn(rekening);
         assertEquals(2, rekeningService.findAll().size());
-        logger.info("Success to get all");
+        logger.info("Berhasil bro");
     }
 
 }
