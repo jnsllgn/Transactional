@@ -7,4 +7,6 @@ public class TransferRequest {
     private String noRekAsal;
     private String noRekTujuan;
     private double jumlahTransfer;
+
+
 }

@@ -14,4 +14,13 @@ public class Rekening {
     private String norek;
     private String name;
     private double saldo;
+
+    public Rekening(String norek, String name, double saldo) {
+        this.norek = norek;
+        this.name = name;
+        this.saldo = saldo;
+    }
+    public Rekening(){
+
+    }
 }

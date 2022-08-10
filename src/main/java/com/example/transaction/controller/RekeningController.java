@@ -6,6 +6,8 @@ import com.example.transaction.service.RekeningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/rekening")
 public class RekeningController {
@@ -19,7 +21,7 @@ public class RekeningController {
     }
 
     @GetMapping
-    public Iterable<Rekening> findAll() {
+    public List<Rekening> findAll() {
         return service.findAll();
     }
 

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class RekeningService {
@@ -14,9 +15,11 @@ public class RekeningService {
     public Rekening create(Rekening rekening){
         return rekeningRepo.save(rekening);
     }
-    public Iterable<Rekening>findAll(){
-        return rekeningRepo.findAll();
-    }
+        public List<Rekening>findAll(){
+            return rekeningRepo.findAll();
+        }
+
+
 
     @Transactional
     public void transfer(String noRekAsal,String noRekTujuan,double jumlahTransfer) {
