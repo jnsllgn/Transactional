@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 @Slf4j
 @SpringBootTest(classes = {TransaksiTest.class})
 public class TransaksiTest {
-    Logger logger = new LoggerFactory().logger(this.getClass());
+//    Logger logger = new LoggerFactory().logger(this.getClass());
     @Mock
     RekeningRepo rekeningRepo;
 
@@ -39,7 +39,7 @@ public class TransaksiTest {
 
         when(rekeningRepo.findAll()).thenReturn(rekening);
         assertEquals(2, rekeningService.findAll().size());
-        logger.info("Berhasil bro");
+        log.info("Berhasil bro");
     }
 
 }
